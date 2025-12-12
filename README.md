@@ -1,11 +1,11 @@
-# Duolingo-new-version
+Duolingo-new-version
 group 7 web site Duolingo  (HTML5,CSS3,Java Script)
 Got you!
 Here is the **full README.md** exactly as you can *copy–paste* it — no explanation, no breaks — just clean final Markdown code.
 
 ---
 
-# ✅ **Copy–Paste Full README.md (Professional)**
+ ✅ **Copy–Paste Full README.md (Professional)**
 
 ```md
 # 🟢 Duolingo New Version — Landing Page Clone
@@ -14,14 +14,14 @@ A modern, responsive, and animated **Duolingo landing page clone** built using *
 
 ---
 
-## 🌐 Live Demo
+ 🌐 Live Demo
 
-🔗 **Vercel Deployment:**  
+🔗 Vercel Deployment: 
 https://duolingonewversion.vercel.app
 
----
 
-## 📁 Folder Structure
+
+ 📁 Folder Structure
 
 ```
 
@@ -51,16 +51,16 @@ Duolingo-new-version/
 
 ````
 
----
 
-## 🖼️ Screenshots
 
-### ⭐ Home Page Preview
+ 🖼️ Screenshots
+
+ ⭐ Home Page Preview
 ```md
 ![Home Page](assets/images/home-preview.png)
 ````
 
-### ⭐ Mobile View
+⭐ Mobile View
 
 ```md
 ![Mobile Preview](assets/images/mobile-preview.png)
@@ -68,7 +68,7 @@ Duolingo-new-version/
 
 ---
 
-## 🚀 Features
+ 🚀 Features
 
 * 🎨 Modern Duolingo-inspired UI
 * 📱 Fully responsive (mobile, tablet, desktop)
@@ -80,7 +80,7 @@ Duolingo-new-version/
 
 ---
 
-## 🛠️ Technologies Used
+ 🛠️ Technologies Used
 
 * **HTML5**
 * **CSS3**
@@ -89,7 +89,7 @@ Duolingo-new-version/
 
 ---
 
-## 🔧 Installation
+🔧 Installation
 
 ```bash
 # Clone the repo
@@ -106,7 +106,7 @@ Then open **index.html** in your browser.
 
 ---
 
-## 🧾 Usage
+ 🧾 Usage
 
 This project is free for:
 
@@ -117,7 +117,7 @@ This project is free for:
 
 ---
 
-## 🤝 Contributing
+ 🤝 Contributing
 
 Contributions are welcome!
 
@@ -135,9 +135,12 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Developer
+ 👨‍💻 Developer
 
-**Rahel Alem**
+**Rahel Melaku**
+**Ruhama Getachew**
+**biniyam puol**
+**fraol **
 GitHub: [https://github.com/richelalem12-oss](https://github.com/richelalem12-oss)
 
 ```
