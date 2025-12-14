@@ -126,7 +126,7 @@ This project is licensed under the MIT License.
 Rahel Melaku
 Ruhama Getachew
 Biniyam Puol
-Fraol
+Firaol  Aduna
 
 GitHub: https://github.com/richelalem12-oss
 
