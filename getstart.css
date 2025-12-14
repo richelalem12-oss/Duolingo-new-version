@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--white, #f1eeee);
+  
+}
+
+header {
+  background:  #f9f9f9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  width: 100%;
+  padding-top: 12px;
+  height: 80px;
+ 
+ 
+}
+
+nav {
+  display: inline-flex;
+    font-size: 1em;
+    color: #4b4b4b;
+    font-weight: bold;
+    justify-content: center;
+    gap: 350px;
+
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+  user-select: none;
+}
+
+.logo-section {
+    display: left;
+    align-items: left;
+    left: 0;
+}
+
+
+
+.header-text {
+    font-size: 2em;
+    color: #4b4b4b;
+    font-weight: bold;
+    justify-content: center;
+    
+}
+.language-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    max-width: 1200px; 
+    width: 95%;
+    margin-top: 40px;
+    margin-left: 70px;
+}
+@media (min-width: 768px) {
+    .language-grid-container {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+.language-card {
+    background-color: white;
+    border-radius: 15px; 
+    padding: 20px 40px 20px 30px;
+    padding-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s, background-color 0.2s;
+    border: 3px solid transparent; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px; 
+}
+
+.language-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.language-card.selected {
+    border: 3px solid #84d8ff; 
+    background-color: #e5f8ff; 
+}
+.language-info h3 {
+    font-size: 1.1em;
+    color: #4b4b4b;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.language-info p {
+    font-size: 0.85em;
+    color: #777;
+}

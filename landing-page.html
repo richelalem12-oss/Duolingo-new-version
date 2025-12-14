@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duolingo</title>
+    <link rel="icon" href="/Duolingo-new-version/image/duolingo.png" type="image/x-icon">
+    <meta name="Group 7 simpel project" content="assignment building a website by html,css and js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+MX+Guides&family=Sixtyfour&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Duolingo-new-version/decoretion.css">
+    <script src="/Duolingo-new-version/responsiveness.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/Duolingo-new-version/icons/landscape-lockup.svg" alt="Duolingo Logo">
+            </div>
+  <!-- In your header section, update the nav-right div -->
+<div class="nav-right">
+    <!-- Language button - visible by default -->
+    <div class="demo-container">
+        <!-- Language Button -->
+        <button class="language-btn" id="languageBtn">
+            SITE LANGUAGE: <span class="selected">ENGLISH</span>
+            <span class="arrow">▼</span>
+        </button>
+        
+        <!-- Language Menu -->
+        <div class="language-menu" id="languageMenu">
+            <div class="language-menu-close" id="closeLanguageMenu">×</div>
+            <div class="language-menu-header">
+                <h3>Select Site Language</h3>
+            </div>
+            
+            <div class="language-columns">
+                <ul>
+                    <li class="language-item"><img width="30" height="20" src="https://img.icons8.com/fluency/48/saudi-arabia.png" alt="saudi-arabia"/>العربية</li>
+                    <li class="language-item"><img width="30" height="20" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-germany-countrys-flags-justicon-flat-justicon.png" alt="germany"/>Deutsch</li>
+                    <li class="language-item selected"><img width="30" height="20" src="https://img.icons8.com/color/50/usa.png" alt="usa"/>English</li>
+                    <li class="language-item"><img width="30" height="20" src="https://img.icons8.com/color/48/france.png" alt="france"/>Français</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/hu.svg" alt="hungary">Magyar</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/it.svg" alt="italy">Italiano</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/kr.svg" alt="korea">한국어</li>
+                    <li class="language-item"><img width="30" height="20" src="https://img.icons8.com/color/48/poland.png" alt="poland"/>Polski</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/ro.svg" alt="romania">Română</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/se.svg" alt="sweden">svenska</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/in.svg" alt="india">తెలుగు</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/ph.svg" alt="philippines">Tagalog</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/ua.svg" alt="ukraine">Українською</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/ch.svg" alt="china">中文</li>
+                </ul>
+                <ul>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/cz.svg" alt="czech">Čeština</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/gr.svg" alt="greece">Ελληνικά</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/es.svg" alt="spain">Español</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/in.svg" alt="india">हिंदी</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/id.svg" alt="indonesia">Bahasa Indonesia</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/jp.svg" alt="japan">日本語</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/nl.svg" alt="netherlands">Nederlands</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/pt.svg" alt="portugal">Português</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/ru.svg" alt="russia">Русский</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/tm.svg" alt="tamil">தமிழ்</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/th.svg" alt="thailand">ภาษาไทย</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/tr.svg" alt="turkey">Türkçe</li>
+                    <li class="language-item"><img width="30" height="20" src="https://flagcdn.com/vn.svg" alt="vietnam">Tiếng Việt</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Backdrop -->
+        <div class="language-menu-backdrop" id="languageMenuBackdrop"></div>
+    </div>
+
+    <script>
+        // Simple working JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageBtn = document.getElementById('languageBtn');
+            const languageMenu = document.getElementById('languageMenu');
+            const closeBtn = document.getElementById('closeLanguageMenu');
+            const backdrop = document.getElementById('languageMenuBackdrop');
+            const languageItems = document.querySelectorAll('.language-item');
+            
+            let isMenuOpen = false;
+            
+            // Toggle menu
+            function toggleMenu() {
+                if (isMenuOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+            
+            function openMenu() {
+                languageMenu.classList.add('active');
+                backdrop.classList.add('active');
+                languageBtn.classList.add('active');
+                isMenuOpen = true;
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMenu() {
+                languageMenu.classList.remove('active');
+                backdrop.classList.remove('active');
+                languageBtn.classList.remove('active');
+                isMenuOpen = false;
+                document.body.style.overflow = '';
+            }
+            
+            // Button click
+            languageBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
+            
+            // Close button
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeMenu();
+            });
+            
+            // Backdrop click
+            backdrop.addEventListener('click', closeMenu);
+            
+            // Language item selection
+            languageItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove selected class from all
+                    languageItems.forEach(i => i.classList.remove('selected'));
+                    
+                    // Add selected to clicked
+                    this.classList.add('selected');
+                    
+                    // Get language name (skip the flag image)
+                    const languageName = this.textContent.trim();
+                    
+                    // Update button text
+                    const selectedSpan = languageBtn.querySelector('.selected');
+                    selectedSpan.textContent = languageName.toUpperCase();
+                    
+                    // Close menu after delay
+                    setTimeout(closeMenu, 300);
+                    
+                    console.log('Language selected:', languageName);
+                });
+            });
+            
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isMenuOpen) {
+                    closeMenu();
+                }
+            });
+            
+            // Close when clicking outside
+            document.addEventListener('click', function(e) {
+                if (isMenuOpen && 
+                    !languageMenu.contains(e.target) && 
+                    !languageBtn.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+            
+            // Initialize with English selected
+            const englishItem = Array.from(languageItems).find(item => 
+                item.textContent.includes('English')
+            );
+            
+            if (englishItem && !englishItem.classList.contains('selected')) {
+                languageItems.forEach(i => i.classList.remove('selected'));
+                englishItem.classList.add('selected');
+            }
+        });
+    </script>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Text Content Section -->
+            <div class="hero-text">
+                <h1>The free, fun, and effective way to learn a language!</h1>
+                
+                <!-- Combined Buttons Section -->
+                <div class="hero-buttons">
+                    <!-- Get Started button - first option -->
+                   <button class="btn-primary" onclick="openLoginModal()">I Already Have an Account</button>
+                    <!-- Login Modal -->
+<!-- Login Modal -->
+<div id="loginModal" class="login-modal-overlay">
+    <div class="login-modal-container">
+        <button class="login-close-btn" onclick="closeLoginModal()">&times;</button>
+        
+        <div class="login-modal-box">
+            <h2>Log in</h2>
+
+            <form id="loginForm">
+                <input type="text" placeholder="Email or username">
+
+                <div class="login-password-wrapper">
+                    <input type="password" placeholder="Password">
+                    <span class="login-forgot" onclick="forgotPassword()">FORGOT?</span>
+                </div>
+
+                <button type="submit" class="login-btn-modal">LOG IN</button>
+            </form>
+
+            <div class="login-divider">
+                <span>OR</span>
+            </div>
+
+            <div class="login-social-btns">
+                <button class="login-google" onclick="loginWithGoogle()">
+                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google icon">Google
+                </button>
+
+                <button class="login-facebook" onclick="loginWithFacebook()">
+                    <img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook icon">Facebook
+                </button>
+            </div>
+
+            <div class="login-terms">
+                <p>By signing in to Duolingo, you agree to our Terms and Privacy Policy.</p>
+                <p class="login-recaptcha-text">
+                    This site is protected by reCAPTCHA Enterprise and the Google Privacy Policy and Terms of Service apply.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+// Modal functions for Get Started button
+function openLoginModal() {
+    const modal = document.getElementById('loginModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeLoginModal() {
+    const modal = document.getElementById('loginModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+function forgotPassword() {
+    alert('Password reset functionality would go here.');
+    // You can implement actual password reset logic here
+}
+
+function loginWithGoogle() {
+    alert('Google login would be implemented here.');
+    // Implement Google OAuth here
+}
+
+function loginWithFacebook() {
+    alert('Facebook login would be implemented here.');
+    // Implement Facebook OAuth here
+}
+
+// Add event listeners after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('loginForm');
+    
+    // Close modal when clicking outside the modal content
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeLoginModal();
+            }
+        });
+    }
+    
+    // Handle form submission
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your login logic here
+            alert('Login form submitted!');
+            closeLoginModal();
+        });
+    }
+    
+    // Optional: Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLoginModal();
+        }
+    });
+    
+    // Also make "I Already Have an Account" button open the modal
+    const loginBtn = document.getElementById('login-btn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function() {
+            openLoginModal();
+        });
+    }
+    
+    // Also make the footer "Get Started" button open the modal
+    const footerGetStartedBtn = document.querySelector('.footer-image .button');
+    if (footerGetStartedBtn) {
+        footerGetStartedBtn.addEventListener('click', function() {
+            openLoginModal();
+        });
+    }
+});
+</script>
+                    
+            <script>
+    // Header swap on scroll
+    window.addEventListener('scroll', () => {
+      const languageBox = document.getElementById('languageBox');
+      const getStartedBtn = document.getElementById('get-started-header');
+      
+      if (window.scrollY > 400) {
+        languageBox.classList.remove('visible');
+        languageBox.classList.add('hidden');
+        getStartedBtn.classList.remove('hidden');
+        getStartedBtn.classList.add('visible');
+      } else {
+        languageBox.classList.remove('hidden');
+        languageBox.classList.add('visible');
+        getStartedBtn.classList.remove('visible');
+        getStartedBtn.classList.add('hidden');
+      }
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      const languageBox = document.getElementById('languageBox');
+      const getStartedBtn = document.getElementById('get-started-header');
+      
+      // Set initial state
+      languageBox.classList.add('visible');
+      getStartedBtn.classList.add('hidden');
+      
+      // Carousel functionality
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const langList = document.getElementById('langList');
+      
+      if (prevBtn && nextBtn && langList) {
+        prevBtn.addEventListener('click', () => {
+          langList.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          langList.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>         <!-- I Already Have an Account button -->
+                   <a href="getstart.html">
+  <button class="btn" id="login">
+    Get started
+  </button>
+</a>
+                </div>
+            </div>
+
+            <!-- Image Section with Decorative Circles -->
+            <div class="hero-image">
+                <!-- Decorative Circles -->
+                <div class="decor-circle yellow"></div>
+                <div class="decor-circle blue"></div>
+                <div class="decor-circle green"></div>
+                
+                <!-- Hero Image/Animation -->
+                <div class="image-container">
+                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+                    <dotlottie-wc 
+                        src="https://lottie.host/3c69162b-4230-4865-b202-a37fd76c4a9e/QgKaWiSIwg.lottie"
+                        style="width: 300px; height: 300px" 
+                        autoplay 
+                        loop>
+                    </dotlottie-wc>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- LANGUAGE CAROUSEL - FIXED VERSION -->
+
+       
+       <hr>
+<section class="hero-Bottom">
+  <div class="language-carousel">
+    <button class="prev" id="prevBtn">&lt;</button>
+    
+    <ul class="language-list" id="langList">
+      <li class="language-item">
+        <img src="https://flagcdn.com/cz.svg" alt="Czech Republic flag">
+        <span>Czech Republic</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/gr.svg" alt="Greece flag">
+        <span>Greece</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/es.svg" alt="Spain flag">
+        <span>Spain</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/in.svg" alt="India flag">
+        <span>India</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/id.svg" alt="Indonesia flag">
+        <span>Indonesia</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/jp.svg" alt="Japan flag">
+        <span>Japan</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/nl.svg" alt="Netherlands flag">
+        <span>Netherlands</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/pt.svg" alt="Portugal flag">
+        <span>Portugal</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/ru.svg" alt="Russia flag">
+        <span>Russia</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/th.svg" alt="Thailand flag">
+        <span>Thailand</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/tr.svg" alt="Turkey flag">
+        <span>Turkey</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/vn.svg" alt="Vietnam flag">
+        <span>Vietnam</span>
+      </li>
+      <li class="language-item">
+        <img width="24" height="24" src="https://img.icons8.com/fluency/48/saudi-arabia.png" alt="saudi-arabia">
+        <span>Saudi Arabia</span>
+      </li>
+      <li class="language-item">
+        <img width="24" height="24" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-germany-countrys-flags-justicon-flat-justicon.png" alt="external-germany-countrys-flags">
+        <span>Germany</span>
+      </li>
+      <li class="language-item">
+        <img width="24" height="24" src="https://img.icons8.com/color/50/usa.png" alt="usa">
+        <span>United States</span>
+      </li>
+      <li class="language-item">
+        <img width="24" height="24" src="https://img.icons8.com/color/48/france.png" alt="france">
+        <span>France</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/hu.svg" alt="Hungary flag">
+        <span>Hungary</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/it.svg" alt="Italy flag">
+        <span>Italy</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/kr.svg" alt="South Korea flag">
+        <span>South Korea</span>
+      </li>
+      <li class="language-item">
+        <img width="24" height="24" src="https://img.icons8.com/color/48/poland.png" alt="poland">
+        <span>Poland</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/ro.svg" alt="Romania flag">
+        <span>Romania</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/se.svg" alt="Sweden flag">
+        <span>Sweden</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/in.svg" alt="India flag">
+        <span>India (Telugu region)</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/ph.svg" alt="Philippines flag">
+        <span>Philippines</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/ua.svg" alt="Ukraine flag">
+        <span>Ukraine</span>
+      </li>
+      <li class="language-item">
+        <img src="https://flagcdn.com/cn.svg" alt="China flag">
+        <span>China</span>
+      </li>
+    </ul>
+    
+    <button class="next" id="nextBtn">&gt;</button>
+  </div>
+</section>
+<hr> 
+<script>
+const list = document.getElementById("langList");
+const prev = document.getElementById("prevBtn");
+const next = document.getElementById("nextBtn");
+
+// Calculate how much to scroll based on item width
+function getScrollAmount() {
+  // Get the first item to measure its width
+  const firstItem = list.querySelector('.language-item');
+  if (firstItem) {
+    const itemWidth = firstItem.offsetWidth;
+    const gap = 10; // Should match your CSS gap
+    return itemWidth + gap;
+  }
+  return 200; // Fallback value
+}
+
+function updateButtons() {
+  // Check if at the beginning
+  prev.classList.toggle("disabled", list.scrollLeft <= 10);
+  
+  // Check if at the end (with a small buffer)
+  next.classList.toggle(
+    "disabled",
+    list.scrollLeft + list.clientWidth >= list.scrollWidth - 10
+  );
+}
+
+// Previous button click
+prev.onclick = () => {
+  const scrollAmount = getScrollAmount();
+  list.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  setTimeout(updateButtons, 350);
+};
+
+// Next button click
+next.onclick = () => {
+  const scrollAmount = getScrollAmount();
+  list.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  setTimeout(updateButtons, 350);
+};
+
+// Update buttons on scroll
+list.addEventListener("scroll", updateButtons);
+
+// Initialize on load
+window.onload = function() {
+  updateButtons();
+  
+  // Force single row layout
+  list.style.flexWrap = 'nowrap';
+  list.style.whiteSpace = 'nowrap';
+};
+
+// Handle window resize
+window.addEventListener('resize', updateButtons);
+</script>  
+  <main>
+    <!-- HERO 2: left image, right text -->
+    <section class="hero2-section">
+      <div class="hero2-image">
+        <dotlottie-wc
+          src="https://lottie.host/87d1b8cc-215c-45ab-86be-806373393874/RnGJkkoFSY.lottie"
+          style="width:500px; height:500px"
+          autoplay
+          loop>
+        </dotlottie-wc>
+      </div>
+
+      <div class="hero2-Text">
+        <h1>free. fun. effective.</h1>
+        <p>
+          Learning with Duolingo is fun, and research shows that it works!  
+          With quick, bite-sized lessons, you'll earn points and unlock
+          new levels while gaining real-world communication skills.
+        </p>
+      </div>
+    </section>
+
+    <!-- HERO 3: left image, right text -->
+    <section class="hero3-section">
+      <div class="hero3-image">
+        <dotlottie-wc
+          src="https://lottie.host/e1b9ebcf-ee4c-4286-81f8-ea4d7f46dd7d/o70OVAjvH1.lottie"
+          style="width:400px; height:400px"
+          autoplay
+          loop>
+        </dotlottie-wc>
+      </div>
+
+      <div class="hero3-Text">
+        <h1>backed by science</h1>
+        <p>
+          We use a combination of research-backed teaching methods and delightful
+          content to create courses that effectively teach reading, writing,
+          listening, and speaking skills!
+        </p>
+      </div>
+    </section>
+
+    <!-- HERO 4: left text, right image -->
+    <section class="hero4-section">
+      <div class="hero4-Text">
+        <h1>stay motivated</h1>
+        <p>
+          We make it easy to form a habit of language learning with game-like 
+          features, fun challenges, and reminders from our friendly mascot,
+          Duo the owl.
+        </p>
+      </div>
+
+      <div class="hero4-image">
+        <dotlottie-wc
+          src="https://lottie.host/14d0886c-a135-4de4-bc02-ae5ad52a5c0e/ADjKfoplgr.lottie"
+          style="width:400px; height:400px"
+          autoplay
+          loop>
+        </dotlottie-wc>
+      </div>
+    </section>
+
+    <!-- HERO 5: left text, right image -->
+    <section class="hero5-section">
+      <div class="hero5-Text">
+        <h1>personalized <br> learning</h1>
+        <p>
+          Considering the lack of sign language in some services, are
+          families who are deaf or hard of hearing excluded.
+        </p>
+      </div>
+
+      <div class="hero5-image">
+        <dotlottie-wc
+          src="https://lottie.host/956d70a1-8115-40d5-810d-fa97cd9c1e63/3GtY8tKURn.lottie"
+          style="width:400px; height:400px"
+          autoplay
+          loop>
+        </dotlottie-wc>
+      </div>
+    </section>
+  </main>
+
+ <!-- PROMO SECTION -->
+<section class="promo-section">
+  <div class="container">
+    <div class="promo-row">
+      <div class="promo-col title-col">
+        <h1 class="promo-title">Learn anytime, anywhere.</h1>
+      </div>
+
+      <div class="promo-col lottie-col">
+        <div class="lottie-container">
+               
+                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+<dotlottie-wc src="https://lottie.host/e20c143f-115d-4efb-b326-2eb5950edaba/stMIpPPzO7.lottie" style="width: 1000px;height: 700px" autoplay loop></dotlottie-wc>
+                </div>
+      </div>
+
+      <div class="promo-col content-col">
+        <p class="promo-text">
+          Make your breaks and commutes more productive with our iPhone and Android apps.
+          Download them and see why Apple and Google gave us their highest accolades.
+        </p>
+
+        <div class="store-buttons">
+          <div style="display: flex; gap: 10px;">
+                    <a href="https://apps.apple.com" target="_blank">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                             alt="Download on the App Store" style="height: 50px;">
+                    </a>
+          </a>
+
+                    <a href="https://play.google.com" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                             alt="Get it on Google Play" style="height: 50px;">
+                    </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- SUPER DUOLINGO SECTION -->
+<section class="super-duolingo-section">
+  <div class="super-container">
+   <!-- Main Content -->
+ <div class="super-content">
+      <div class="super-left">
+        <p class="super-title">
+          <span class="line">Learning a Language</span> <br>
+          <span class="line accent">super-Duolingo</span>
+        </p>
+      </div>
+       </div>
+    
+    
+    <!-- Button -->
+    <div class="super-button-container">
+      <button class="super-cta-button">
+        <span class="button-text">TRY 1 WEEK FREE</span>
+        <span class="button-sparkle">✨</span>
+      </button>
+      
+    </div>
+  </div>
+</section>
+
+  <main>
+    <!-- DUOLINGO ENGLISH TEST SECTION -->
+    <section class="hero2-section">
+      <div class="hero2-image">
+        <dotlottie-wc src="https://lottie.host/54f7ef19-15a3-4437-8740-8feaa5be5605/J9DRDwrYeZ.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+      </div>
+
+      <div class="hero2-Text">
+        <h1>Duolingo English Test</h1>
+        <p>
+          Our convenient, fast, and affordable English test integrates the
+          latest assessment science and AI empowering anyone to
+          accurately test their English where and when they're at their best.
+        </p>
+        <button class="but">CERTIFY YOUR ENGLISH</button>
+      </div>
+    </section>
+
+    <!-- DUOLINGO FOR SCHOOLS SECTION -->
+    <section class="hero5-section">
+      <div class="hero5-Text">
+        <h1>Duolingo for Schools</h1>
+        <p>
+          Teachers, we're here to help you! Our free tools support your
+          students as they learn languages through the Duolingo app,
+          both in and out of the classroom.
+        </p>
+        <button class="but">GET YOUR CLASS STARTED</button>
+      </div>
+
+      <div class="hero5-image">
+        <dotlottie-wc src="https://lottie.host/dfecf9c5-fe64-4a9e-a3d4-31ca42767137/KaqSEWS0Ek.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+      </div>
+    </section>
+  </main>
+
+  
+
+ <section class="footer-image">
+      <div><h1>Learn a Language<br> with Duolingo</h1>
+                  </div>
+      <button class="button">Get Started</button>
+    
+      </section>
+
+
+    
+    </main >
+
+
+
+<footer>
+  <div class="footer-container"> 
+    <div class="footer-section">
+      <h3>About us</h3>
+      <ul>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Approach</a></li>
+        <li><a href="#">Efficacy</a></li>
+        <li><a href="#">Duolingo Handbook</a></li>
+        <li><a href="#">Investors</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Products</h3>
+      <ul>
+        <li><a href="#">Duolingo</a></li>
+        <li><a href="#">Duolingo for Schools</a></li>
+        <li><a href="#">Duolingo English Test</a></li>
+        <li><a href="#">Super Duolingo</a></li>
+        <li><a href="#">Gift Super Duolingo</a></li>
+        <li><a href="#">Duolingo Max</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Apps</h3>
+      <ul>
+        <li><a href="#">Android App</a></li>
+        <li><a href="#">iOS App</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Help and support</h3>
+      <ul>
+        <li><a href="#">Duolingo FAQs</a></li>
+        <li><a href="#">Schools FAQs</a></li>
+        <li><a href="#">English Test FAQs</a></li>
+        <li><a href="#">Status</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Privacy and terms</h3>
+      <ul>
+        <li><a href="#">Community guidelines</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Do Not Sell or Share My Personal Information</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Social</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="language-bar">
+    <div class="language-bar-content">
+      <h3>Site language:</h3>
+      <ul class="language-list">
+        <li><a href="#">العربية</a></li>
+        <li><a href="#">中文</a></li>
+         <li><a href="#">বাংলা</a></li>
+        <li><a href="#">Čeština</a></li>
+        <li><a href="#">Deutsch</a></li>
+        <li><a href="#">Ελληνικά</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">Español</a></li>
+        <li><a href="#">Français</a></li>
+        <li><a href="#">हिंदी</a></li>
+        <li><a href="#">Magyar</a></li>
+        <li><a href="#">Bahasa Indonesia</a></li>
+        <li><a href="#">Italiano</a></li>
+        <li><a href="#">日本語</a></li>
+        <li><a href="#">한국어</a></li>
+        <li><a href="#">Nederlands</a></li>
+        <li><a href="#">Polski</a></li>
+        <li><a href="#">Português</a></li>
+        <li><a href="#">Română</a></li>
+        <li><a href="#">Русский</a></li>
+        <li><a href="#">svenska</a></li>
+        <li><a href="#">தமிழ்</a></li>
+        <li><a href="#">తెలుగు</a></li>
+        <li><a href="#">ภาษาไทย</a></li>
+        <li><a href="#">Tagalog</a></li>
+        <li><a href="#">Türkçe</a></li>
+        <li><a href="#">Українською</a></li>
+        <li><a href="#">Tiếng Việt</a></li>
+        <li><a href="#">中文</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
+
+  
+  
+</body>
+</html>
