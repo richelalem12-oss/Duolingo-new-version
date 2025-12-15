@@ -123,8 +123,8 @@ This project is licensed under the MIT License.
 
 👨‍💻 Developers
 
-Rahel Melaku
-Ruhama Getachew
+Rahel Melaku  2269/16
+Ruhama Getachew 2339/16
 Biniyam Puol
 Firaol  Aduna
 
